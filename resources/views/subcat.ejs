@@ -1,0 +1,48 @@
+<section >
+    <div class="container row">
+        <div style="width: 50%; float: left;">
+            <form action="/subcategory" method="POST">
+                <label>Sub category</label><br>
+                
+                <input type="text" required name="subCat"><br><br>
+                <button type="submit" class="btn btn-success">Add Subcategories</button>
+        
+            </form>
+        </div>
+        <div style="width: 50%; float: left;">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        <th scope="col">Sub category</th>
+                        <th scope="col">url starts</th>
+                    </tr>
+                    <% subcat.forEach(function(subcat){ %>
+                        
+                            <tr>
+                                <td><%=subcat.subCategory%></td>
+                                <td><%=subcat.url %></td>
+                            </tr>
+                        
+                   <% }) %>
+                    
+                </thead>
+                
+                <tbody>
+                    
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                </tbody>
+               
+                    
+                
+                
+            </table>
+        </div>
+
+    </div>
+    
+</section>

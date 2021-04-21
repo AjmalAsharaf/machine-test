@@ -1,0 +1,67 @@
+<section >
+    <div class="container row">
+        <div style="width: 50%; float: left;">
+            <form action="/addProduct" method="POST">
+                <label>Product</label><br><br>
+
+                <label>Select category</label><br>
+                <select name="category" id="">
+                    <% category.forEach(function (category){ %>
+                        <option value="<%= category._id %>"><%= category.category %></option>
+                   <% }) %>
+                   
+                </select><br>  
+                <label>Select subcategory</label><br>
+                <select name="subcategory" id=""><br>
+                    <% subcategory.forEach(function (subcat){ %>
+                        <option value="<%= subcat._id %>"><%= subcat.subCategory%></option>
+                   <% }) %>
+                   
+                </select><br>  
+                <label for="">Add product here</label><br>
+                <input type="text" required name="product"><br>
+                <label for="">Add product Price here</label><br>
+                <input type="text" required name="price"><br><br>
+                <button type="submit" class="btn btn-success">Add Product</button>
+        
+            </form>
+        </div>
+        <div style="width: 50%; float: left;">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        
+                        <th scope="col">Product</th>
+                        <th scope="col">url starts</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    
+                        
+                            
+                        
+                  
+                    
+                </thead>
+                
+                <tbody>
+                    <% product.forEach( function (product){ %>
+                        <tr>
+                            <td><%= product.product %></td>
+                            <td><a href="<%= product.url %>"><%= product.url %></a></td>
+                            <td> <a href="/addMoreSub/<%= product._id %>" class="btn btn-success">Add more sub</a> </td>
+                        </tr>
+                        
+                  <%  }) %>
+                        
+
+                </tbody>
+               
+                    
+                
+                
+            </table>
+        </div>
+
+    </div>
+    
+</section>

@@ -1,0 +1,10 @@
+<form action="/addMoreSub" method="POST">
+    
+    <label class="text-primary"> <%=product.product%></label><br>
+    <label> Add sub category</label><br>
+
+    <input type="text" required name="subCate"><br><br>
+    <input type="text" name="id" hidden value="<%=product._id%>">
+    <button type="submit" class="btn btn-success">Add categories</button>
+
+</form>

@@ -1,0 +1,39 @@
+<section >
+    <div class="container row">
+        <div style="width: 50%; float: left;">
+            <form action="/category" method="POST">
+                <label>Category</label><br>
+        
+                <input type="text" required name="category"><br><br>
+                <button type="submit" class="btn btn-success">Add categories</button>
+        
+            </form>
+        </div>
+        <div style="width: 50%; float: left;">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Category</th>
+                        <th scope="col">url starts</th>
+                    </tr>
+                </thead>
+                <% if(categories) {%>
+                <tbody>
+                    <% categories.forEach(function(category){ %>
+                        <tr>
+                            <td><%= category.category %></td>
+                            <td><%= category.url %></td>
+                        </tr>
+                    <% }) %>
+
+                </tbody>
+                <% } %>
+                    
+                
+                
+            </table>
+        </div>
+
+    </div>
+    
+</section>
